@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Campaña Informativa: Violencia de Género — Prevención, Señales y Acompañamiento</title>
-<meta name="description" content="Página informativa para una campaña escolar sobre violencia de género: qué es, tipos, prevención, señales, cómo acompañar, estadísticas y recursos (Línea 144).">
-<link rel="canonical" href="https://tu-dominio.com/violencia-de-genero">
+<meta name="description" content="Guía informativa: qué es la violencia de género, tipos, señales de alerta, prevención, cómo acompañar, estadísticas y recursos en Argentina (Línea 144).">
 
 <!-- Open Graph / Twitter -->
+<link rel="canonical" href="https://tu-dominio.com/violencia-de-genero">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Violencia de Género — Reconocer, Prevenir y Acompañar">
 <meta property="og:description" content="Señales de alerta, prevención, acompañamiento, estadísticas y recursos (Línea 144).">
@@ -19,32 +19,26 @@
 :root{
   --bg:#0b1220; --card:#0f172a; --text:#f8fafc; --muted:#cbd5e1;
   --accent:#a78bfa; --accent2:#22d3ee; --ok:#34d399; --warn:#f59e0b; --danger:#ef4444; --link:#22d3ee;
-  --nav-h:56px;
-  --hotline-h:56px;
+  --nav-h:56px;            /* alto navbar */
+  --hotline-h:56px;        /* alto barra inferior */
 }
 @media (prefers-color-scheme: light){
   :root{ --bg:#ffffff; --card:#f8fafc; --text:#0b1220; --muted:#334155; --link:#2563eb }
 }
-@media (max-width:480px){
-  :root{ --hotline-h:64px; }
-}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth; scroll-padding-top: var(--nav-h);} /* evita que la navbar tape títulos */
+html{scroll-behavior:smooth}
 body{
   margin:0; background:var(--bg); color:var(--text);
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial;
-  /* evita que la barra fija de abajo tape contenido/QR/footer */
-  padding-bottom: calc(var(--hotline-h) + env(safe-area-inset-bottom, 0px));
+  min-width:320px;                       /* evita roturas al “achicar todo” */
+  padding-bottom:var(--hotline-h);       /* para que la barra verde no tape nada */
 }
 a{color:var(--link)}
 img{max-width:100%; height:auto; display:block}
 
-.progress{
-  position:fixed; left:0; right:0; top:0; height:3px;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  transform-origin:0 50%; transform:scaleX(0); z-index:1200
-}
+.progress{position:fixed; left:0; right:0; top:0; height:3px; background:linear-gradient(90deg,var(--accent),var(--accent2)); transform-origin:0 50%; transform:scaleX(0); z-index:1200}
 
+/* NAVBAR */
 nav.primary{
   position:sticky; top:0; height:var(--nav-h); display:flex; align-items:center;
   backdrop-filter:blur(8px);
@@ -56,59 +50,62 @@ nav.primary.hide{ transform:translateY(-100%) }
 nav .nav-inner{max-width:1100px; margin:0 auto; padding:.25rem .75rem; width:100%; display:flex; align-items:center; gap:.6rem}
 .brand{display:flex; align-items:center; gap:.5rem; font-weight:700}
 .brand .dot{width:.65rem; height:.65rem; border-radius:50%; background:var(--accent2)}
-
-.toc{margin-left:auto}
-.toc ul{display:flex; gap:.25rem; padding:0; margin:0; list-style:none; overflow:auto hidden; white-space:nowrap}
-.toc a{display:block; text-decoration:none; font-size:.9rem; padding:.35rem .55rem; border-radius:.5rem; color:var(--text); border:1px solid transparent}
+.toc{margin-left:auto; min-width:0; flex:1}
+.toc ul{
+  display:flex; gap:.25rem; padding:0; margin:0; list-style:none;
+  overflow-x:auto; white-space:nowrap; scrollbar-width:none;
+}
+.toc ul::-webkit-scrollbar{display:none}
+.toc a{
+  display:block; text-decoration:none; font-size:.92rem; padding:.4rem .6rem;
+  border-radius:.5rem; color:var(--text); border:1px solid transparent
+}
 .toc a:hover,.toc a:focus,.toc a.active{background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.15)}
+@media (max-width:420px){
+  .brand span:last-child{font-size:.95rem}        /* compacta el título */
+  .toc a{font-size:.88rem; padding:.35rem .5rem}
+}
 
+/* HERO */
 header.hero{
-  display:grid; place-items:center; text-align:center; min-height:24vh;
-  padding: calc(var(--nav-h) + 10px) 1rem 1rem;
+  display:grid; place-items:center; text-align:center;
+  min-height:72vh;                          /* alto cómodo en mobile */
+  padding: calc(var(--nav-h) + 8px) 1rem 1rem;
   background-image:
     linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.45)),
     url('./assets/1000798172.jpg');
   background-size:cover; background-position:center;
 }
-.kicker{letter-spacing:.18em; text-transform:uppercase; color:var(--accent2); font-weight:700; font-size:.85rem}
-h1{font-size:clamp(1.6rem, 2.6vw + 1rem, 3rem); line-height:1.1; margin:.25rem 0 .6rem}
-.subtitle{color:var(--muted); max-width:900px; margin-inline:auto}
+.kicker{letter-spacing:.18em; text-transform:uppercase; color:var(--accent2); font-weight:700; font-size:.9rem}
+h1{font-size:clamp(1.8rem, 2.8vw + 1rem, 3rem); line-height:1.1; margin:.35rem 0 .6rem}
+.subtitle{color:var(--muted); max-width:900px; margin-inline:auto; font-size:clamp(1rem, 1.2vw + .6rem, 1.15rem)}
 
 main{padding-top:.25rem}
-section{padding:1.4rem 1rem;}
+section{padding:1.4rem 1rem; scroll-margin-top: calc(var(--nav-h) + 12px)}
 .container{max-width:1100px; margin:0 auto}
 .grid{display:grid; gap:1.1rem}
 .cols-2{grid-template-columns:1fr}
 @media (min-width: 900px){ .cols-2{grid-template-columns:1fr 1fr} }
 
-.card{
-  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
-  border:1px solid rgba(255,255,255,.08); border-radius:1rem; padding:1.1rem
-}
+/* CARDS */
+.card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:1rem; padding:1.1rem}
 .card h2{margin:0 0 .6rem; font-size:1.4rem}
 .credits{color:var(--muted); font-size:.85rem}
 figure{margin:0}
 
-/* IMÁGENES: ver completas (sin recortes) y tamaño controlado */
+/* IMÁGENES (completas y moderadas) */
 .img-cover{
   width:100%;
-  object-fit:contain;
-  max-height:360px;                  /* desktop */
+  object-fit:contain;             /* no recorta */
+  max-height:52vh;                /* limita tamaño según alto de pantalla */
   border-radius:.8rem;
   border:1px solid rgba(255,255,255,.1);
   background:rgba(255,255,255,.04);
 }
-@media (max-width: 899px){
-  .img-cover{ max-height:240px; }    /* mobile/tablet */
-}
+@media (min-width:900px){ .img-cover{ max-height:360px } }
+@media (max-width:420px){ .img-cover{ max-height:42vh } }
 
-/* Componentes UI */
-.badge{display:inline-block; padding:.22rem .55rem; border-radius:999px; border:1px solid rgba(255,255,255,.15); color:var(--muted); font-size:.78rem}
-.pill{display:inline-flex; gap:.35rem; padding:.18rem .5rem; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); font-size:.82rem}
-.notice{border-left:4px solid var(--accent); padding:.75rem 1rem; background:rgba(167,139,250,.12); border-radius:.5rem}
-.callout{border-left:4px solid var(--ok); padding:.75rem 1rem; background:rgba(52,211,153,.12); border-radius:.5rem}
-.danger{border-left:4px solid var(--danger); padding:.75rem 1rem; background:rgba(239,68,68,.12); border-radius:.5rem}
-.resources a{display:inline-block; margin:.25rem .5rem .25rem 0}
+/* Quick links */
 .quick{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:.75rem}
 .qcard{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); padding:.9rem; border-radius:.9rem}
 .qcard a{display:flex; justify-content:space-between; text-decoration:none; color:var(--text)}
@@ -128,6 +125,21 @@ figure{margin:0}
 .tabs button[aria-selected="true"]{background:rgba(255,255,255,.08)}
 .tab-panel{display:none}
 .tab-panel.active{display:block}
+
+/* Barra de ayuda inferior (fija) */
+.hotline-bar{
+  position:fixed; left:0; right:0; bottom:0;
+  height:var(--hotline-h);
+  display:flex; align-items:center; justify-content:center; gap:1rem;
+  padding:0 .75rem; background:#0b7a3a; color:#fff; z-index:1050;
+  flex-wrap:wrap;
+}
+.hotline-bar a{color:#fff; text-decoration:none; font-weight:700}
+.hotline-bar small{opacity:.9}
+@media (max-width:460px){
+  .hotline-bar{gap:.5rem; font-size:.95rem}
+  .hotline-bar .sep{display:none} /* oculta el “|” en pantallas angostas */
+}
 
 footer{padding:2rem 1rem 3rem; color:var(--muted)}
 @media print{
@@ -180,6 +192,7 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
 </header>
 
 <main id="contenido">
+<!-- ¿Qué es? -->
 <section id="que-es" aria-labelledby="h-que-es">
   <div class="container grid cols-2">
     <figure>
@@ -188,7 +201,7 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
     </figure>
     <div class="card">
       <h2 id="h-que-es">¿Qué es la violencia de género?</h2>
-      <p>Según la <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/152155/norma.htm" target="_blank" rel="noopener noreferrer">Ley 26.485</a>, es toda conducta, acción u omisión basada en el género que cause muerte, daño o sufrimiento físico, sexual, psicológico, económico o patrimonial, así como su manifestación simbólica, en ámbito público o privado.</p>
+      <p>Según la <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/152155/norma.htm" target="_blank" rel="noopener">Ley 26.485</a>, es toda conducta, acción u omisión basada en el género que cause muerte, daño o sufrimiento físico, sexual, psicológico, económico o patrimonial, así como su manifestación simbólica, en ámbito público o privado.</p>
       <div class="notice" role="note">
         <strong>Ámbitos y modalidades:</strong> doméstica, institucional, laboral, en el espacio público, contra la libertad reproductiva, obstétrica, mediática y digital.
       </div>
@@ -196,6 +209,7 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
   </div>
 </section>
 
+<!-- Tipos -->
 <section id="tipos" aria-labelledby="h-tipos">
   <div class="container grid cols-2">
     <div class="card">
@@ -231,6 +245,7 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
   </div>
 </section>
 
+<!-- Señales -->
 <section id="senales" aria-labelledby="h-senales">
   <div class="container grid cols-2">
     <figure>
@@ -251,6 +266,7 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
   </div>
 </section>
 
+<!-- Prevención -->
 <section id="prevencion" aria-labelledby="h-prevencion">
   <div class="container grid cols-2">
     <div class="card">
@@ -270,6 +286,7 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
   </div>
 </section>
 
+<!-- Acompañar -->
 <section id="acompanar" aria-labelledby="h-acompanar">
   <div class="container card">
     <h2 id="h-acompanar">Cómo acompañar a una persona</h2>
@@ -298,6 +315,7 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
   </div>
 </section>
 
+<!-- Estadísticas -->
 <section id="estadisticas" aria-labelledby="h-estadisticas">
   <div class="container">
     <div class="card">
@@ -320,6 +338,7 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
   </div>
 </section>
 
+<!-- Plan -->
 <section id="plan" aria-labelledby="h-plan">
   <div class="container card">
     <h2 id="h-plan">Plan de seguridad personal (checklist)</h2>
@@ -333,20 +352,22 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
   </div>
 </section>
 
+<!-- Recursos -->
 <section id="recursos" aria-labelledby="h-recursos">
   <div class="container card">
     <h2 id="h-recursos">Recursos de ayuda</h2>
-    <p class="hotline">📞 <strong>Línea 144 (nacional, 24/7)</strong> — Atención, contención y asesoramiento. <a href="https://www.argentina.gob.ar/linea-144" target="_blank" rel="noopener noreferrer">Sitio oficial</a>. También por app y WhatsApp.</p>
+    <p class="hotline">📞 <strong>Línea 144 (nacional, 24/7)</strong> — Atención, contención y asesoramiento. <a href="https://www.argentina.gob.ar/linea-144" target="_blank" rel="noopener">Sitio oficial</a>. También por app y WhatsApp.</p>
     <p>Emergencias: <a href="tel:911"><strong>911</strong></a>. En CABA y PBA existen dispositivos locales complementarios.</p>
     <div class="resources">
-      <a href="https://www.csjn.gov.ar/omrecopilacion/omfemicidio/homefemicidio.html" target="_blank" rel="noopener noreferrer">RNFJA — Corte Suprema</a>
-      <a href="https://ahoraquesinosven.com.ar/" target="_blank" rel="noopener noreferrer">Observatorio AQSNSV</a>
-      <a href="https://www.mpf.gob.ar/ufem/files/2025/03/Informe-Anual-de-homicidios-y-femicidios_2024-1.pdf" target="_blank" rel="noopener noreferrer">UFEM — Informe</a>
-      <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/152155/norma.htm" target="_blank" rel="noopener noreferrer">Ley 26.485 (InfoLEG)</a>
+      <a href="https://www.csjn.gov.ar/omrecopilacion/omfemicidio/homefemicidio.html" target="_blank" rel="noopener">RNFJA — Corte Suprema</a>
+      <a href="https://ahoraquesinosven.com.ar/" target="_blank" rel="noopener">Observatorio AQSNSV</a>
+      <a href="https://www.mpf.gob.ar/ufem/files/2025/03/Informe-Anual-de-homicidios-y-femicidios_2024-1.pdf" target="_blank" rel="noopener">UFEM — Informe</a>
+      <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/152155/norma.htm" target="_blank" rel="noopener">Ley 26.485 (InfoLEG)</a>
     </div>
   </div>
 </section>
 
+<!-- QR -->
 <section id="qr" aria-labelledby="h-qr">
   <div class="container card">
     <h2 id="h-qr">Accedé a esta página desde tu celular</h2>
@@ -363,15 +384,16 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
   </div>
 </section>
 
+<!-- Fuentes -->
 <section id="fuentes" aria-labelledby="h-fuentes">
   <div class="container card">
     <h2 id="h-fuentes">Fuentes y enlaces</h2>
     <ul>
-      <li>Ley 26.485 — InfoLEG: <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/152155/norma.htm" target="_blank" rel="noopener noreferrer">texto completo</a></li>
-      <li>Línea 144 — Gobierno nacional: <a href="https://www.argentina.gob.ar/linea-144" target="_blank" rel="noopener noreferrer">información oficial</a> · <a href="https://www.argentina.gob.ar/aplicaciones/linea-144-atencion-mujeres-y-LGBTI" target="_blank" rel="noopener noreferrer">app Línea 144</a></li>
-      <li>RNFJA — Corte Suprema (informes anuales): <a href="https://www.csjn.gov.ar/omrecopilacion/omfemicidio/homefemicidio.html" target="_blank" rel="noopener noreferrer">sitio oficial</a></li>
-      <li>Observatorio “Ahora Que Sí Nos Ven”: <a href="https://ahoraquesinosven.com.ar/" target="_blank" rel="noopener noreferrer">portal</a> · <a href="https://ahoraquesinosven.com.ar/reports/178-femicidios-en-lo-que-va-del-2025" target="_blank" rel="noopener noreferrer">reporte 2025 (al 29/09)</a></li>
-      <li>UFEM — Ministerio Público Fiscal: <a href="https://www.mpf.gob.ar/ufem/files/2025/03/Informe-Anual-de-homicidios-y-femicidios_2024-1.pdf" target="_blank" rel="noopener noreferrer">Informe anual (PDF)</a></li>
+      <li><a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/152155/norma.htm" target="_blank" rel="noopener">Ley 26.485 — InfoLEG (texto completo)</a></li>
+      <li><a href="https://www.argentina.gob.ar/linea-144" target="_blank" rel="noopener">Línea 144 — Gobierno nacional</a> · <a href="https://www.argentina.gob.ar/aplicaciones/linea-144-atencion-mujeres-y-LGBTI" target="_blank" rel="noopener">App oficial</a></li>
+      <li><a href="https://www.csjn.gov.ar/omrecopilacion/omfemicidio/homefemicidio.html" target="_blank" rel="noopener">RNFJA — Corte Suprema (informes anuales)</a></li>
+      <li><a href="https://ahoraquesinosven.com.ar/reports/178-femicidios-en-lo-que-va-del-2025" target="_blank" rel="noopener">Observatorio “Ahora Que Sí Nos Ven” — 178 femicidios al 29/09/2025</a></li>
+      <li><a href="https://www.mpf.gob.ar/ufem/files/2025/03/Informe-Anual-de-homicidios-y-femicidios_2024-1.pdf" target="_blank" rel="noopener">UFEM — Informe anual (PDF)</a></li>
     </ul>
     <p class="credits">Imágenes en representación gráfica.</p>
   </div>
@@ -379,26 +401,25 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
 </main>
 
 <button class="btn-top" aria-label="Volver arriba" onclick="window.scrollTo({top:0, behavior:'smooth'})"
-  style="position:fixed; right:1rem; bottom:calc(var(--hotline-h) + 1rem); border:1px solid rgba(255,255,255,.15); background:rgba(0,0,0,.45); color:#fff; padding:.6rem .7rem; border-radius:.6rem; cursor:pointer;">↑</button>
+  style="position:fixed; right:1rem; bottom:calc(var(--hotline-h) + .5rem); border:1px solid rgba(255,255,255,.15); background:rgba(0,0,0,.45); color:#fff; padding:.6rem .7rem; border-radius:.6rem; cursor:pointer;">↑</button>
 
-<div class="hotline-bar" role="region" aria-label="Barra de ayuda rápida"
-  style="position:fixed; left:0; right:0; bottom:0; background:#0b7a3a; color:#fff; display:flex; justify-content:center; align-items:center; gap:1rem; padding:.6rem 1rem; z-index:1050; min-height:var(--hotline-h);">
+<div class="hotline-bar" role="region" aria-label="Barra de ayuda rápida">
   <span>¿Necesitás ayuda ahora?</span>
-  <a href="tel:144" style="color:#fff; text-decoration:none; font-weight:700;">Llamar 144</a>
-  <span aria-hidden="true">|</span>
-  <a href="tel:911" style="color:#fff; text-decoration:none; font-weight:700;">Emergencias 911</a>
+  <a href="tel:144">Llamar 144</a>
+  <span class="sep">|</span>
+  <a href="tel:911">Emergencias 911</a>
   <small>Argentina · 24/7</small>
 </div>
 
 <footer role="contentinfo">
   <div class="container">
-    <p class="credits">Esta página fue diseñada para una <strong>campaña escolar</strong>. Compartí, adaptá y difundí con fines educativos y de prevención.</p>
+    <p class="credits">Página diseñada para una <strong>campaña escolar</strong>. Compartí, adaptá y difundí con fines educativos y de prevención.</p>
   </div>
 </footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  /* Barra de progreso + comportamiento de navbar */
+  /* Progreso + comportamiento navbar */
   const progress = document.getElementById('progress');
   const nav = document.getElementById('nav');
   let lastY = window.scrollY;
@@ -413,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function(){
   document.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 
-  /* Resaltado de sección activa en el menú */
+  /* Resaltado en menú */
   const links = Array.from(document.querySelectorAll('.toc a'));
   const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
   const obs = new IntersectionObserver(entries => {
@@ -425,7 +446,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.1 });
   sections.forEach(s => obs.observe(s));
 
-  /* Acordeones (Tipos y Acompañar) */
+  /* Acordeones */
   document.querySelectorAll('.accordion .acc-item .acc-btn').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const item = btn.closest('.acc-item');
@@ -434,7 +455,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
-  /* Tabs de Estadísticas */
+  /* Tabs */
   const tabButtons = document.querySelectorAll('.tabs [role=tab]');
   const tabPanels = document.querySelectorAll('.tab-panel');
   tabButtons.forEach(btn => btn.addEventListener('click', () => {
@@ -445,7 +466,7 @@ document.addEventListener('DOMContentLoaded', function(){
     if (target) target.classList.add('active');
   }));
 
-  /* QR con fallback + AUTO apuntando a esta página */
+  /* QR: apunta por defecto a la URL real de esta página (mejor para leer el QR) */
   const input = document.getElementById('url');
   const qrImg = document.getElementById('qr-img');
   const pageUrlText = document.getElementById('pageUrlText');
@@ -460,44 +481,33 @@ document.addEventListener('DOMContentLoaded', function(){
     pageUrlText.textContent = url;
   }
 
-  // Inicial: usar SIEMPRE la URL real de esta página
   const urlActual = window.location.href;
-  if (input) input.value = urlActual;
+  input.value = urlActual;
   setQR(urlActual);
 
-  // Regenerar con Enter si querés apuntar a otra URL
-  if (input) {
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        const url = input.value.trim();
-        try {
-          const u = new URL(url);
-          setQR(u.href);
-          if (hint) hint.textContent = "¡Listo! El QR fue actualizado.";
-        } catch (err) {
-          if (hint) hint.textContent = "URL inválida. Probá nuevamente.";
-        }
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const url = input.value.trim();
+      try {
+        const u = new URL(url);
+        setQR(u.href);
+        if (hint) hint.textContent = "¡Listo! El QR fue actualizado.";
+      } catch (err) {
+        if (hint) hint.textContent = "URL inválida. Probá nuevamente.";
       }
-    });
-  }
-
-  /* Abrir “Cómo acompañar” al entrar o al pulsar el atajo */
-  function abrirAcompanhar(){
-    const acc = document.querySelector('#acompanar .accordion');
-    if(!acc) return;
-    const first = acc.querySelector('.acc-item');
-    const btn   = first?.querySelector('.acc-btn');
-    if(first && btn){
-      first.classList.add('open');
-      btn.setAttribute('aria-expanded','true');
-      btn.focus({preventScroll:true});
     }
+  });
+
+  /* Abrir “Cómo acompañar” cuando se navega desde el menú */
+  function abrirAcompanhar(){
+    const first = document.querySelector('#acompanar .acc-item');
+    const btn = first?.querySelector('.acc-btn');
+    if (first && btn){ first.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
   }
-  if (location.hash === '#acompanar') setTimeout(abrirAcompanhar, 50);
+  if (location.hash === '#acompanar') setTimeout(abrirAcompanhar, 60);
   document.querySelectorAll('a[href="#acompanar"]').forEach(a=>{
     a.addEventListener('click', ()=> setTimeout(abrirAcompanhar, 250));
   });
-
 });
 </script>
 </body>
