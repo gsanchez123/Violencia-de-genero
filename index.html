@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campaña Informativa: Violencia de Género — Prevención, Señales y Acompañamiento</title>
+<meta name="description" content="Página informativa para una campaña escolar sobre violencia de género: qué es, tipos, prevención, señales, cómo acompañar, estadísticas y recursos (Línea 144).">
+<link rel="canonical" href="https://tu-dominio.com/violencia-de-genero">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Violencia de Género — Reconocer, Prevenir y Acompañar">
+<meta property="og:description" content="Señales de alerta, prevención, acompañamiento, estadísticas y recursos (Línea 144).">
+<meta property="og:url" content="https://tu-dominio.com/violencia-de-genero">
+<meta property="og:image" content="./assets/1000798172.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+:root{
+  --bg:#0b1220; --card:#0f172a; --text:#f8fafc; --muted:#cbd5e1;
+  --accent:#a78bfa; --accent2:#22d3ee; --ok:#34d399; --warn:#f59e0b; --danger:#ef4444; --link:#22d3ee;
+  --nav-h:56px;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#ffffff; --card:#f8fafc; --text:#0b1220; --muted:#334155; --link:#2563eb }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial}
+a{color:var(--link)}
+img{max-width:100%; height:auto; display:block}
+
+.progress{position:fixed; left:0; right:0; top:0; height:3px; background:linear-gradient(90deg,var(--accent),var(--accent2)); transform-origin:0 50%; transform:scaleX(0); z-index:1200}
+
+nav.primary{
+  position:sticky; top:0; height:var(--nav-h); display:flex; align-items:center;
+  backdrop-filter:blur(8px);
+  background:rgba(0,0,0,.25); /* compatibilidad amplia */
+  border-bottom:1px solid rgba(255,255,255,.08);
+  z-index:1100; transition:transform .3s ease;
+}
+nav.primary.hide{ transform:translateY(-100%) }
+nav .nav-inner{max-width:1100px; margin:0 auto; padding:.25rem .75rem; width:100%; display:flex; align-items:center; gap:.6rem}
+.brand{display:flex; align-items:center; gap:.5rem; font-weight:700}
+.brand .dot{width:.65rem; height:.65rem; border-radius:50%; background:var(--accent2)}
+
+.toc{margin-left:auto}
+.toc ul{display:flex; gap:.25rem; padding:0; margin:0; list-style:none; overflow:auto hidden; white-space:nowrap}
+.toc a{display:block; text-decoration:none; font-size:.9rem; padding:.35rem .55rem; border-radius:.5rem; color:var(--text); border:1px solid transparent}
+.toc a:hover,.toc a:focus,.toc a.active{background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.15)}
+
+header.hero{
+  display:grid; place-items:center; text-align:center; min-height:24vh;  /* más compacto */
+  padding: calc(var(--nav-h) + 10px) 1rem 1rem;
+  background-image:
+    linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.45)),
+    url('./assets/1000798172.jpg');
+  background-size:cover; background-position:center;
+}
+.kicker{letter-spacing:.18em; text-transform:uppercase; color:var(--accent2); font-weight:700; font-size:.85rem}
+h1{font-size:clamp(1.6rem, 2.6vw + 1rem, 3rem); line-height:1.1; margin:.25rem 0 .6rem}
+.subtitle{color:var(--muted); max-width:900px; margin-inline:auto}
+
+main{padding-top:.25rem}
+section{padding:1.4rem 1rem; scroll-margin-top: calc(var(--nav-h) + 12px)}
+.container{max-width:1100px; margin:0 auto}
+.grid{display:grid; gap:1.1rem}
+.cols-2{grid-template-columns:1fr}
+@media (min-width: 900px){ .cols-2{grid-template-columns:1fr 1fr} }
+
+.card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:1rem; padding:1.1rem}
+.card h2{margin:0 0 .6rem; font-size:1.4rem}
+.credits{color:var(--muted); font-size:.85rem}
+figure{margin:0}
+
+/* IMÁGENES: ver completas (sin recortes) y más chicas */
+.img-cover{
+  width:100%;
+  object-fit:contain;          /* no recorta */
+  max-height:360px;            /* tamaño moderado desktop */
+  aspect-ratio:auto;           /* no forzar proporción */
+  border-radius:.8rem;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.04); /* relleno suave si “sobra” */
+}
+@media (max-width: 899px){
+  .img-cover{ max-height:240px; }  /* tamaño moderado mobile */
+}
+
+/* Componentes UI */
+.badge{display:inline-block; padding:.22rem .55rem; border-radius:999px; border:1px solid rgba(255,255,255,.15); color:var(--muted); font-size:.78rem}
+.pill{display:inline-flex; gap:.35rem; padding:.18rem .5rem; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); font-size:.82rem}
+.notice{border-left:4px solid var(--accent); padding:.75rem 1rem; background:rgba(167,139,250,.12); border-radius:.5rem}
+.callout{border-left:4px solid var(--ok); padding:.75rem 1rem; background:rgba(52,211,153,.12); border-radius:.5rem}
+.danger{border-left:4px solid var(--danger); padding:.75rem 1rem; background:rgba(239,68,68,.12); border-radius:.5rem}
+.resources a{display:inline-block; margin:.25rem .5rem .25rem 0}
+.quick{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:.75rem}
+.qcard{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); padding:.9rem; border-radius:.9rem}
+.qcard a{display:flex; justify-content:space-between; text-decoration:none; color:var(--text)}
+
+/* Acordeones */
+.accordion{border-radius:.8rem; overflow:hidden; border:1px solid rgba(255,255,255,.08)}
+.acc-item + .acc-item{border-top:1px solid rgba(255,255,255,.08)}
+.acc-btn{width:100%; text-align:left; padding:.9rem 1rem; background:transparent; color:var(--text); border:0; display:flex; justify-content:space-between; align-items:center; font-size:1rem; cursor:pointer}
+.acc-btn:focus{outline:2px solid var(--accent2); outline-offset:2px}
+.acc-panel{display:grid; grid-template-rows:0fr; transition:grid-template-rows .25s ease}
+.acc-panel>div{overflow:hidden}
+.acc-item.open .acc-panel{grid-template-rows:1fr}
+
+/* Tabs */
+.tabs{display:flex; gap:.35rem; flex-wrap:wrap; margin-bottom:.6rem}
+.tabs button{padding:.4rem .6rem; border-radius:.6rem; border:1px solid rgba(255,255,255,.15); background:transparent; color:var(--text); cursor:pointer}
+.tabs button[aria-selected="true"]{background:rgba(255,255,255,.08)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+footer{padding:2rem 1rem 3rem; color:var(--muted)}
+@media print{
+  nav.primary,.hotline-bar,.btn-top,.progress{display:none!important}
+  a[href]::after{content:" (" attr(href) ")"; font-size:.85em; color:#555}
+  body{color:#000; background:#fff}
+  .card{border:1px solid #ddd; background:#fff}
+  @page{size:A4; margin:12mm}
+}
+</style>
+</head>
+
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<nav class="primary" aria-label="Navegación principal" id="nav">
+  <div class="nav-inner">
+    <div class="brand"><span class="dot" aria-hidden="true"></span><span>Campaña escolar</span></div>
+    <div class="toc">
+      <ul>
+        <li><a href="#que-es">¿Qué es?</a></li>
+        <li><a href="#tipos">Tipos</a></li>
+        <li><a href="#senales">Señales</a></li>
+        <li><a href="#prevencion">Prevención</a></li>
+        <li><a href="#acompanar">Acompañar</a></li>
+        <li><a href="#estadisticas">Estadísticas</a></li>
+        <li><a href="#plan">Plan</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#qr">QR</a></li>
+        <li><a href="#fuentes">Fuentes</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" role="banner">
+  <div class="hero-content">
+    <div class="kicker">Campaña escolar</div>
+    <h1>Violencia de género: reconocer, prevenir y acompañar</h1>
+    <p class="subtitle">Si vos o alguien que conocés está en riesgo, llamá al <a href="tel:144"><strong>144</strong></a> (24/7 en Argentina) o al <a href="tel:911"><strong>911</strong></a> ante una emergencia.</p>
+    <div class="container" style="margin-top:.8rem">
+      <div class="quick">
+        <div class="qcard"><a href="#senales"><span>⚠️ Señales de alerta</span><small>ver</small></a></div>
+        <div class="qcard"><a href="#recursos"><span>📞 Pedir ayuda</span><small>144 / 911</small></a></div>
+        <div class="qcard"><a href="#acompanar"><span>🤝 Cómo acompañar</span><small>paso a paso</small></a></div>
+        <div class="qcard"><a href="#plan"><span>🛡️ Plan de seguridad</span><small>checklist</small></a></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+<section id="que-es" aria-labelledby="h-que-es">
+  <div class="container grid cols-2">
+    <figure>
+      <img class="img-cover" loading="lazy" src="./assets/1000798210.jpg" alt="Ilustración de niña con mano al frente con la palabra 'BASTA'">
+      <figcaption class="credits">Imagen provista por el usuario.</figcaption>
+    </figure>
+    <div class="card">
+      <h2 id="h-que-es">¿Qué es la violencia de género?</h2>
+      <p>Según la <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/152155/norma.htm" target="_blank" rel="noopener">Ley 26.485</a>, es toda conducta, acción u omisión basada en el género que cause muerte, daño o sufrimiento físico, sexual, psicológico, económico o patrimonial, así como su manifestación simbólica, en ámbito público o privado.</p>
+      <div class="notice" role="note">
+        <strong>Ámbitos y modalidades:</strong> doméstica, institucional, laboral, en el espacio público, contra la libertad reproductiva, obstétrica, mediática y digital.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tipos" aria-labelledby="h-tipos">
+  <div class="container grid cols-2">
+    <div class="card">
+      <h2 id="h-tipos">Tipos de violencia (con ejemplos)</h2>
+      <div class="accordion" id="acc-tipos">
+        <div class="acc-item">
+          <button class="acc-btn" type="button" aria-expanded="false">Física <span>+</span></button>
+          <div class="acc-panel"><div><ul><li>Golpes, empujones, estrangulamiento, uso de objetos o armas.</li></ul></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" type="button" aria-expanded="false">Psicológica <span>+</span></button>
+          <div class="acc-panel"><div><ul><li>Humillaciones, insultos, amenazas, celos, control, manipulación, aislamiento.</li></ul></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" type="button" aria-expanded="false">Sexual <span>+</span></button>
+          <div class="acc-panel"><div><ul><li>Cualquier acto sexual sin consentimiento; abuso, acoso, explotación.</li></ul></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" type="button" aria-expanded="false">Económica y patrimonial <span>+</span></button>
+          <div class="acc-panel"><div><ul><li>Control del dinero, prohibir trabajar/estudiar, endeudamiento, destrucción de bienes o documentos.</li></ul></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" type="button" aria-expanded="false">Simbólica <span>+</span></button>
+          <div class="acc-panel"><div><ul><li>Mensajes o estereotipos que reproducen desigualdad y legitiman la violencia.</li></ul></div></div>
+        </div>
+      </div>
+      <p class="credits">Basado en Ley 26.485 y guías del MPF/UFEM.</p>
+    </div>
+    <figure>
+      <img class="img-cover" loading="lazy" src="./assets/1000798209.jpg" alt="Mano colocando un anillo-esposa en otra mano, símbolo de coerción y control">
+      <figcaption class="credits">Imagen provista por el usuario.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="senales" aria-labelledby="h-senales">
+  <div class="container grid cols-2">
+    <figure>
+      <img class="img-cover" loading="lazy" src="./assets/1000798219.jpg" alt="Capas emocionales: sonrisa exterior con angustia interior">
+      <figcaption class="credits">Imagen provista por el usuario.</figcaption>
+    </figure>
+    <div class="card">
+      <h2 id="h-senales">¿Cómo detectar señales de alerta?</h2>
+      <ul>
+        <li>Control del celular, redes, amistades o ropa; <span class="pill">aislamiento</span>.</li>
+        <li>Descalificaciones, humillaciones, gritos, amenazas; <span class="pill">miedo/ansiedad</span>.</li>
+        <li>Celos y exigencia de obediencia, vigilancia constante; <span class="pill">culpabilización</span>.</li>
+        <li>Restricción de acceso al dinero, endeudar sin consentimiento.</li>
+        <li>Forzar relaciones sexuales o presionar para prácticas no deseadas.</li>
+      </ul>
+      <div class="danger" role="alert"><strong>Si hay armas, amenazas de muerte o intentos de estrangulamiento: riesgo alto.</strong> Llamá al 911.</div>
+    </div>
+  </div>
+</section>
+
+<section id="prevencion" aria-labelledby="h-prevencion">
+  <div class="container grid cols-2">
+    <div class="card">
+      <h2 id="h-prevencion">Prevención: qué podemos hacer</h2>
+      <ul>
+        <li>Promover <strong>relaciones igualitarias</strong> y educación sexual integral con enfoque de derechos.</li>
+        <li>Aprender a <strong>poner límites</strong> y construir redes de apoyo entre pares, escuela y comunidad.</li>
+        <li><strong>No naturalizar</strong> chistes, estereotipos o micromachismos: intervenir y señalar.</li>
+        <li>Conocer los <strong>canales de ayuda</strong> (144, 911, equipos locales) y difundirlos.</li>
+        <li>Capacitaciones en instituciones: protocolos, rutas de derivación, primeras respuestas.</li>
+      </ul>
+    </div>
+    <figure>
+      <img class="img-cover" loading="lazy" src="./assets/1000798211.jpg" alt="Pista de atletismo con obstáculos domésticos, simbolizando desigualdad de tareas">
+      <figcaption class="credits">Imagen provista por el usuario.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="acompanar" aria-labelledby="h-acompanar">
+  <div class="container card">
+    <h2 id="h-acompanar">Cómo acompañar a una persona</h2>
+    <div class="accordion" id="acc-acompanar">
+      <div class="acc-item">
+        <button class="acc-btn" type="button" aria-expanded="false">1) Creéle y validá <span>+</span></button>
+        <div class="acc-panel"><div><p>Escucha activa, sin juzgar. Validá emociones y evitá culpabilizar.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" type="button" aria-expanded="false">2) Seguridad primero <span>+</span></button>
+        <div class="acc-panel"><div><p>Si hay riesgo inminente: 911. Plan de salida y lugares seguros.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" type="button" aria-expanded="false">3) Ofrecé opciones <span>+</span></button>
+        <div class="acc-panel"><div><p>Línea 144, asesoramiento legal/psicológico, botón antipánico (si existe).</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" type="button" aria-expanded="false">4) Respetá tiempos/privacidad <span>+</span></button>
+        <div class="acc-panel"><div><p>No presiones a denunciar si la expone a más riesgo. Confidencialidad.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" type="button" aria-expanded="false">5) Seguimiento <span>+</span></button>
+        <div class="acc-panel"><div><p>Mantené contacto, reforzá la red y acompañá si lo desea.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="estadisticas" aria-labelledby="h-estadisticas">
+  <div class="container">
+    <div class="card">
+      <h2 id="h-estadisticas">Estadísticas y contexto (Argentina)</h2>
+      <div class="tabs" role="tablist" aria-label="Series de datos">
+        <button role="tab" type="button" aria-selected="true" aria-controls="panel-rnfja" id="tab-rnfja">RNFJA</button>
+        <button role="tab" type="button" aria-selected="false" aria-controls="panel-obsv" id="tab-obsv">Observatorio</button>
+        <button role="tab" type="button" aria-selected="false" aria-controls="panel-ufem" id="tab-ufem">UFEM</button>
+      </div>
+      <div id="panel-rnfja" class="tab-panel active" role="tabpanel" aria-labelledby="tab-rnfja">
+        <p>La Corte Suprema (RNFJA) publica informes anuales de femicidios con datos oficiales por jurisdicción.</p>
+      </div>
+      <div id="panel-obsv" class="tab-panel" role="tabpanel" aria-labelledby="tab-obsv">
+        <p>El Observatorio “Ahora Que Sí Nos Ven” reportó <strong>178 femicidios</strong> entre el 01/01 y el 29/09/2025.</p>
+      </div>
+      <div id="panel-ufem" class="tab-panel" role="tabpanel" aria-labelledby="tab-ufem">
+        <p>UFEM (MPF) analiza homicidios de víctimas con identidades femeninas para fortalecer la persecución penal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="plan" aria-labelledby="h-plan">
+  <div class="container card">
+    <h2 id="h-plan">Plan de seguridad personal (checklist)</h2>
+    <ul>
+      <li><label><input type="checkbox"> Identificá puntos seguros (casas de confianza, comisarías, hospitales).</label></li>
+      <li><label><input type="checkbox"> Prepará una <strong>bolsa de emergencia</strong> con documentos, dinero, llaves, medicación.</label></li>
+      <li><label><input type="checkbox"> Definí una <strong>palabra clave</strong> con familiares/amigxs para pedir ayuda.</label></li>
+      <li><label><input type="checkbox"> Respaldo de evidencia (fotos, chats, certificados) en la nube/correo seguro.</label></li>
+      <li><label><input type="checkbox"> Revisá apps de rastreo/control y actualizá contraseñas desde un equipo confiable.</label></li>
+    </ul>
+  </div>
+</section>
+
+<section id="recursos" aria-labelledby="h-recursos">
+  <div class="container card">
+    <h2 id="h-recursos">Recursos de ayuda</h2>
+    <p class="hotline">📞 <strong>Línea 144 (nacional, 24/7)</strong> — Atención, contención y asesoramiento. <a href="https://www.argentina.gob.ar/linea-144" target="_blank" rel="noopener">Sitio oficial</a>. También por app y WhatsApp.</p>
+    <p>Emergencias: <a href="tel:911"><strong>911</strong></a>. En CABA y PBA existen dispositivos locales complementarios.</p>
+    <div class="resources">
+      <a href="https://www.csjn.gov.ar/omrecopilacion/omfemicidio/homefemicidio.html" target="_blank" rel="noopener">RNFJA — Corte Suprema</a>
+      <a href="https://ahoraquesinosven.com.ar/" target="_blank" rel="noopener">Observatorio AQSNSV</a>
+      <a href="https://www.mpf.gob.ar/ufem/files/2025/03/Informe-Anual-de-homicidios-y-femicidios_2024-1.pdf" target="_blank" rel="noopener">UFEM — Informe</a>
+      <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/152155/norma.htm" target="_blank" rel="noopener">Ley 26.485 (InfoLEG)</a>
+    </div>
+  </div>
+</section>
+
+<section id="qr" aria-labelledby="h-qr">
+  <div class="container card">
+    <h2 id="h-qr">Accedé a esta página desde tu celular</h2>
+    <p>Escaneá el siguiente código QR para abrir <code id="pageUrlText">https://tu-dominio.com/violencia-de-genero</code>. Cambiá la URL y presioná <strong>Enter</strong> para regenerarlo.</p>
+    <div class="qr-wrap" style="display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap;">
+      <img id="qr-img" width="220" height="220" alt="Código QR de acceso" style="width:220px; height:220px; border-radius:.75rem; border:1px solid rgba(255,255,255,.2); background:#fff; padding:.5rem;">
+      <div>
+        <label for="url" class="notice"><strong>Actualizar URL del QR:</strong></label>
+        <input id="url" type="url" value="https://tu-dominio.com/violencia-de-genero" aria-label="URL de destino del código QR" style="width:min(500px,90%); padding:.5rem; border-radius:.5rem; border:1px solid rgba(255,255,255,.2); background:transparent; color:var(--text)">
+        <p class="callout" id="qr-hint">Cambiá la URL y apretá Enter para regenerar el QR.</p>
+        <noscript><p class="credits">El QR requiere JavaScript para actualizarse.</p></noscript>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fuentes" aria-labelledby="h-fuentes">
+  <div class="container card">
+    <h2 id="h-fuentes">Fuentes y enlaces</h2>
+    <ul>
+      <li>Ley 26.485 — InfoLEG</li>
+      <li>Línea 144 — Gobierno nacional</li>
+      <li>RNFJA — Corte Suprema</li>
+      <li>Observatorio “Ahora Que Sí Nos Ven”</li>
+      <li>UFEM — Ministerio Público Fiscal</li>
+    </ul>
+    <p class="credits">Imágenes provistas por el usuario.</p>
+  </div>
+</section>
+</main>
+
+<button class="btn-top" aria-label="Volver arriba" onclick="window.scrollTo({top:0, behavior:'smooth'})"
+  style="position:fixed; right:1rem; bottom:1rem; border:1px solid rgba(255,255,255,.15); background:rgba(0,0,0,.45); color:#fff; padding:.6rem .7rem; border-radius:.6rem; cursor:pointer;">↑</button>
+
+<div class="hotline-bar" role="region" aria-label="Barra de ayuda rápida" style="position:fixed; left:0; right:0; bottom:0; background:#0b7a3a; color:#fff; display:flex; justify-content:center; gap:1rem; padding:.6rem 1rem; z-index:1050;">
+  <span>¿Necesitás ayuda ahora?</span>
+  <a href="tel:144" style="color:#fff; text-decoration:none; font-weight:700;">Llamar 144</a>
+  <span>|</span>
+  <a href="tel:911" style="color:#fff; text-decoration:none; font-weight:700;">Emergencias 911</a>
+  <small>Argentina · 24/7</small>
+</div>
+
+<footer role="contentinfo">
+  <div class="container">
+    <p class="credits">Esta página fue diseñada para una <strong>campaña escolar</strong>. Compartí, adaptá y difundí con fines educativos y de prevención.</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  /* Barra de progreso + comportamiento de navbar */
+  const progress = document.getElementById('progress');
+  const nav = document.getElementById('nav');
+  let lastY = window.scrollY;
+  function onScroll(){
+    const h = document.documentElement;
+    const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    progress.style.transform = 'scaleX(' + Math.max(0, Math.min(1, scrolled)) + ')';
+    const y = window.scrollY;
+    if (y > lastY && y > 80) nav.classList.add('hide'); else nav.classList.remove('hide');
+    lastY = y;
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* Resaltado de sección activa en el menú */
+  const links = Array.from(document.querySelectorAll('.toc a'));
+  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.1 });
+  sections.forEach(s => obs.observe(s));
+
+  /* Acordeones (Tipos y Acompañar) */
+  document.querySelectorAll('.accordion .acc-item .acc-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const item = btn.closest('.acc-item');
+      const opened = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', opened ? 'true' : 'false');
+    });
+  });
+
+  /* Tabs de Estadísticas */
+  const tabButtons = document.querySelectorAll('.tabs [role=tab]');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  tabButtons.forEach(btn => btn.addEventListener('click', () => {
+    tabButtons.forEach(b => b.setAttribute('aria-selected','false'));
+    btn.setAttribute('aria-selected','true');
+    tabPanels.forEach(p => p.classList.remove('active'));
+    const target = document.getElementById(btn.getAttribute('aria-controls'));
+    if (target) target.classList.add('active');
+  }));
+
+  /* QR con fallback + AUTO apuntando a esta página */
+  const input = document.getElementById('url');
+  const qrImg = document.getElementById('qr-img');
+  const pageUrlText = document.getElementById('pageUrlText');
+  const hint = document.getElementById('qr-hint');
+
+  function setQR(url){
+    const enc = encodeURIComponent(url);
+    const primary = "https://chart.googleapis.com/chart?cht=qr&chs=420x420&chl=" + enc;
+    const fallback = "https://api.qrserver.com/v1/create-qr-code/?size=420x420&data=" + enc;
+    qrImg.onerror = () => { qrImg.onerror = null; qrImg.src = fallback; };
+    qrImg.src = primary;
+    pageUrlText.textContent = url;
+  }
+
+  // Inicial: usar SIEMPRE la URL real de esta página
+  const urlActual = window.location.href;
+  input.value = urlActual;
+  setQR(urlActual);
+
+  // Regenerar con Enter si querés apuntar a otra URL
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const url = input.value.trim();
+      try {
+        const u = new URL(url);
+        setQR(u.href);
+        if (hint) hint.textContent = "¡Listo! El QR fue actualizado.";
+      } catch (err) {
+        if (hint) hint.textContent = "URL inválida. Probá nuevamente.";
+      }
+    }
+  });
+
+  /* Abrir “Cómo acompañar” al entrar o al pulsar el atajo */
+  function abrirAcompanhar(){
+    const acc = document.querySelector('#acompanar .accordion');
+    if(!acc) return;
+    const first = acc.querySelector('.acc-item');
+    const btn   = first?.querySelector('.acc-btn');
+    if(first && btn){
+      first.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+      btn.focus({preventScroll:true});
+    }
+  }
+  if (location.hash === '#acompanar') setTimeout(abrirAcompanhar, 50);
+  document.querySelectorAll('a[href="#acompanar"]').forEach(a=>{
+    a.addEventListener('click', ()=> setTimeout(abrirAcompanhar, 250));
+  });
+
+});
+</script>
+</body>
+</html>
