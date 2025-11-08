@@ -50,7 +50,7 @@ nav .nav-inner{max-width:1100px; margin:0 auto; padding:.25rem .75rem; width:100
 .toc a:hover,.toc a:focus,.toc a.active{background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.15)}
 
 header.hero{
-  display:grid; place-items:center; text-align:center; min-height:24vh;  /* más compacto */
+  display:grid; place-items:center; text-align:center; min-height:24vh;  /* compacto y visible en mobile */
   padding: calc(var(--nav-h) + 10px) 1rem 1rem;
   background-image:
     linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.45)),
@@ -84,7 +84,7 @@ figure{margin:0}
   background:rgba(255,255,255,.04); /* relleno suave si “sobra” */
 }
 @media (max-width: 899px){
-  .img-cover{ max-height:240px; }  /* tamaño moderado mobile */
+  .img-cover{ max-height:240px; }  /* tamaño moderado mobile/tablet */
 }
 
 /* Componentes UI */
@@ -169,11 +169,11 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
   <div class="container grid cols-2">
     <figure>
       <img class="img-cover" loading="lazy" src="./assets/1000798210.jpg" alt="Ilustración de niña con mano al frente con la palabra 'BASTA'">
-      <figcaption class="credits">Imagen provista por el usuario.</figcaption>
+      <figcaption class="credits">Imágenes en representación gráfica.</figcaption>
     </figure>
     <div class="card">
       <h2 id="h-que-es">¿Qué es la violencia de género?</h2>
-      <p>Según la <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/152155/norma.htm" target="_blank" rel="noopener">Ley 26.485</a>, es toda conducta, acción u omisión basada en el género que cause muerte, daño o sufrimiento físico, sexual, psicológico, económico o patrimonial, así como su manifestación simbólica, en ámbito público o privado.</p>
+      <p>Según la <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/152155/norma.htm" target="_blank" rel="noopener noreferrer">Ley 26.485</a>, es toda conducta, acción u omisión basada en el género que cause muerte, daño o sufrimiento físico, sexual, psicológico, económico o patrimonial, así como su manifestación simbólica, en ámbito público o privado.</p>
       <div class="notice" role="note">
         <strong>Ámbitos y modalidades:</strong> doméstica, institucional, laboral, en el espacio público, contra la libertad reproductiva, obstétrica, mediática y digital.
       </div>
@@ -211,7 +211,7 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
     </div>
     <figure>
       <img class="img-cover" loading="lazy" src="./assets/1000798209.jpg" alt="Mano colocando un anillo-esposa en otra mano, símbolo de coerción y control">
-      <figcaption class="credits">Imagen provista por el usuario.</figcaption>
+      <figcaption class="credits">Imágenes en representación gráfica.</figcaption>
     </figure>
   </div>
 </section>
@@ -220,7 +220,7 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
   <div class="container grid cols-2">
     <figure>
       <img class="img-cover" loading="lazy" src="./assets/1000798219.jpg" alt="Capas emocionales: sonrisa exterior con angustia interior">
-      <figcaption class="credits">Imagen provista por el usuario.</figcaption>
+      <figcaption class="credits">Imágenes en representación gráfica.</figcaption>
     </figure>
     <div class="card">
       <h2 id="h-senales">¿Cómo detectar señales de alerta?</h2>
@@ -250,7 +250,7 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
     </div>
     <figure>
       <img class="img-cover" loading="lazy" src="./assets/1000798211.jpg" alt="Pista de atletismo con obstáculos domésticos, simbolizando desigualdad de tareas">
-      <figcaption class="credits">Imagen provista por el usuario.</figcaption>
+      <figcaption class="credits">Imágenes en representación gráfica.</figcaption>
     </figure>
   </div>
 </section>
@@ -321,13 +321,13 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
 <section id="recursos" aria-labelledby="h-recursos">
   <div class="container card">
     <h2 id="h-recursos">Recursos de ayuda</h2>
-    <p class="hotline">📞 <strong>Línea 144 (nacional, 24/7)</strong> — Atención, contención y asesoramiento. <a href="https://www.argentina.gob.ar/linea-144" target="_blank" rel="noopener">Sitio oficial</a>. También por app y WhatsApp.</p>
+    <p class="hotline">📞 <strong>Línea 144 (nacional, 24/7)</strong> — Atención, contención y asesoramiento. <a href="https://www.argentina.gob.ar/linea-144" target="_blank" rel="noopener noreferrer">Sitio oficial</a>. También por app y WhatsApp.</p>
     <p>Emergencias: <a href="tel:911"><strong>911</strong></a>. En CABA y PBA existen dispositivos locales complementarios.</p>
     <div class="resources">
-      <a href="https://www.csjn.gov.ar/omrecopilacion/omfemicidio/homefemicidio.html" target="_blank" rel="noopener">RNFJA — Corte Suprema</a>
-      <a href="https://ahoraquesinosven.com.ar/" target="_blank" rel="noopener">Observatorio AQSNSV</a>
-      <a href="https://www.mpf.gob.ar/ufem/files/2025/03/Informe-Anual-de-homicidios-y-femicidios_2024-1.pdf" target="_blank" rel="noopener">UFEM — Informe</a>
-      <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/152155/norma.htm" target="_blank" rel="noopener">Ley 26.485 (InfoLEG)</a>
+      <a href="https://www.csjn.gov.ar/omrecopilacion/omfemicidio/homefemicidio.html" target="_blank" rel="noopener noreferrer">RNFJA — Corte Suprema</a>
+      <a href="https://ahoraquesinosven.com.ar/" target="_blank" rel="noopener noreferrer">Observatorio AQSNSV</a>
+      <a href="https://www.mpf.gob.ar/ufem/files/2025/03/Informe-Anual-de-homicidios-y-femicidios_2024-1.pdf" target="_blank" rel="noopener noreferrer">UFEM — Informe</a>
+      <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/152155/norma.htm" target="_blank" rel="noopener noreferrer">Ley 26.485 (InfoLEG)</a>
     </div>
   </div>
 </section>
@@ -352,13 +352,13 @@ footer{padding:2rem 1rem 3rem; color:var(--muted)}
   <div class="container card">
     <h2 id="h-fuentes">Fuentes y enlaces</h2>
     <ul>
-      <li>Ley 26.485 — InfoLEG</li>
-      <li>Línea 144 — Gobierno nacional</li>
-      <li>RNFJA — Corte Suprema</li>
-      <li>Observatorio “Ahora Que Sí Nos Ven”</li>
-      <li>UFEM — Ministerio Público Fiscal</li>
+      <li>Lei 26.485 — InfoLEG: <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/152155/norma.htm" target="_blank" rel="noopener noreferrer">texto completo</a></li>
+      <li>Línea 144 — Gobierno nacional: <a href="https://www.argentina.gob.ar/linea-144" target="_blank" rel="noopener noreferrer">información oficial</a> · <a href="https://www.argentina.gob.ar/aplicaciones/linea-144-atencion-mujeres-y-LGBTI" target="_blank" rel="noopener noreferrer">app Línea 144</a></li>
+      <li>RNFJA — Corte Suprema (informes anuales): <a href="https://www.csjn.gov.ar/omrecopilacion/omfemicidio/homefemicidio.html" target="_blank" rel="noopener noreferrer">sitio oficial</a></li>
+      <li>Observatorio “Ahora Que Sí Nos Ven”: <a href="https://ahoraquesinosven.com.ar/" target="_blank" rel="noopener noreferrer">portal</a> · <a href="https://ahoraquesinosven.com.ar/reports/178-femicidios-en-lo-que-va-del-2025" target="_blank" rel="noopener noreferrer">reporte 2025 (al 29/09)</a></li>
+      <li>UFEM — Ministerio Público Fiscal: <a href="https://www.mpf.gob.ar/ufem/files/2025/03/Informe-Anual-de-homicidios-y-femicidios_2024-1.pdf" target="_blank" rel="noopener noreferrer">Informe anual (PDF)</a></li>
     </ul>
-    <p class="credits">Imágenes provistas por el usuario.</p>
+    <p class="credits">Imágenes en representación gráfica.</p>
   </div>
 </section>
 </main>
@@ -446,22 +446,24 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Inicial: usar SIEMPRE la URL real de esta página
   const urlActual = window.location.href;
-  input.value = urlActual;
+  if (input) input.value = urlActual;
   setQR(urlActual);
 
   // Regenerar con Enter si querés apuntar a otra URL
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      const url = input.value.trim();
-      try {
-        const u = new URL(url);
-        setQR(u.href);
-        if (hint) hint.textContent = "¡Listo! El QR fue actualizado.";
-      } catch (err) {
-        if (hint) hint.textContent = "URL inválida. Probá nuevamente.";
+  if (input) {
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const url = input.value.trim();
+        try {
+          const u = new URL(url);
+          setQR(u.href);
+          if (hint) hint.textContent = "¡Listo! El QR fue actualizado.";
+        } catch (err) {
+          if (hint) hint.textContent = "URL inválida. Probá nuevamente.";
+        }
       }
-    }
-  });
+    });
+  }
 
   /* Abrir “Cómo acompañar” al entrar o al pulsar el atajo */
   function abrirAcompanhar(){
@@ -484,3 +486,4 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 </body>
 </html>
+
